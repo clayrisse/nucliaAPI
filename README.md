@@ -29,12 +29,12 @@ your knowledge box public.
 questions on the Nuclia Discord public channels.
 
 
-> Bonus 1:
+> ### Bonus 1:
 > Make sure the script does not make duplicates if we import the same files twice
 
 This features is included in the script
 
-> Bonus 2:
+> ### Bonus 2:
 > Make your knowledge box private and create an HTTP service that would proxy calls
 > to Nuclia and add automatically the needed HTTP headers so anonymous users can
 > search in your private knowledge box (Note: deployment of such proxy is
@@ -45,6 +45,7 @@ Tagging the resources
 Imagine that you want to restrict access to a set of resources in a Knowledge Box according the group the current user belongs to.
 
 You will store the authorized groups as a keywordset field in each resource at the time it is created. The resource creation payload will look like:
+
 ```sh
 {
   "title": "Meeting minutes",
@@ -54,6 +55,7 @@ You will store the authorized groups as a keywordset field in each resource at t
   }
 }
 ```
+
 The groups key here is just an example. It can be anything you base your access restriction on: usernames, etc. Just use a relevant key to store the values.
 
 Adding a filter to requests
@@ -73,9 +75,10 @@ Needs to be modified to:
 
 The extra filters parameter here will select the resources where the groups keywordset contains group2.
 
+___________________________________________________________________________________
 
-##Observations
-Thingd to fix:in the documentation page:
+## Observations
+Things to fix:in the documentation page:
 
 1. Python script to upload folder setting labels has 2 quote maks in KNOWLEDGE_BOX
 2. Change npm install npm install @nuclia/sdk rxjs to npm i @nuclia/core in JDK guide??
