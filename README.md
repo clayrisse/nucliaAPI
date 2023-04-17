@@ -1,44 +1,53 @@
-to run this you need to have intall python-dotenv. If you don't have it, do:
+To run this you need to have intalled python-dotenv. If you don't have it, do:
+
 ```sh
 python -m pip install python-dotenv
 ```
 
 To run the script with provided example folder do:
+
 ```sh
 python import.py ./pdfs
 ```
+
 or
+
 ```sh
 python import.py <path-folder-needed>
 ```
 
-# Objective
+# Objective of technical exercise
+
 Create a script that would read a local folder and upload to Nuclia all the PDF files it
 contains, and then create a static web page allowing users to search into these files.
 
 ## Guidelines and recommendations
+
 - You can use the programming language you want. If you choose Python or JS/TS,
-using the existing Nuclia SDKs is not a requirement, you are free to use them if you
-want to, but making direct calls to the API is absolutely fine.
+  using the existing Nuclia SDKs is not a requirement, you are free to use them if you
+  want to, but making direct calls to the API is absolutely fine.
 - Push your code to a public GitHub repository. The README page will explain how to
-install and run the script.
+  install and run the script.
 - Put the search page on GitHub Pages.
 - You will have to create your own Nuclia account on https://nuclia.cloud and make
-your knowledge box public.
+  your knowledge box public.
 - You can use all the information provided at https://docs.nuclia.dev/ and you can ask
-questions on the Nuclia Discord public channels.
-
+  questions on the Nuclia Discord public channels.
 
 > ### Bonus 1:
+>
 > Make sure the script does not make duplicates if we import the same files twice
 
 This features is included in the script
 
 > ### Bonus 2:
+>
 > Make your knowledge box private and create an HTTP service that would proxy calls
 > to Nuclia and add automatically the needed HTTP headers so anonymous users can
 > search in your private knowledge box (Note: deployment of such proxy is
 > out-of-scope).
+
+According to the documentation, I'll have to follow something like this
 
 Implement a proxy layer
 Tagging the resources
@@ -75,10 +84,11 @@ Needs to be modified to:
 
 The extra filters parameter here will select the resources where the groups keywordset contains group2.
 
-___________________________________________________________________________________
+---
 
 ## Observations
-Things to fix:in the documentation page:
+
+Things to fix in the documentation page:
 
 1. Python script to upload folder setting labels has 2 quote maks in KNOWLEDGE_BOX
 2. Change npm install npm install @nuclia/sdk rxjs to npm i @nuclia/core in JDK guide??
