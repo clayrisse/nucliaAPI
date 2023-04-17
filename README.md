@@ -1,3 +1,10 @@
+You can see this in action in:
+```sh
+https://clayrisse.github.io/nucliaAPI/
+```
+And ask questions about hormones. Thats the information it currently has
+___________________________________________________
+
 To run this you need to have intalled python-dotenv. If you don't have it, do:
 
 ```sh
