@@ -45,8 +45,6 @@ def upload_file(content_path):
 
 
 def upload_folder(path, processed_labels=[]):
-    # print("loking in folder----")
-    # processed_labels = []
     all_files = os.listdir(path)
     for content in all_files:
         if content in IGNORE or content.startswith("."):
@@ -55,23 +53,17 @@ def upload_folder(path, processed_labels=[]):
         if os.path.isdir(content_path):
             processed_labels.extend(upload_folder(
                 content_path, processed_labels))
-            # print("folder labels.....", processed_labels)
         else:
-            # print("     --------------------before asking",
-            #       os.path.basename(content_path).encode('ascii'), processed_labels)
             if str(os.path.basename(content_path).encode('ascii')) in processed_labels:
-
                 print("\n---The file: ", os.path.basename(content_path).encode('ascii'),
                       " is already processing. It might be duplicated and won't be uploaded. \n---Check you dont have a copy in another folder or change the name in one of the files.\n")
             else:
-                # print(os.path.basename(content_path).encode('ascii'),
-                #       "it is NOT innnnn already--------------------")
+                # this "processed labels" keeps track of all the file names uploaded and prevents duplicates when asked
+                # it needs to be passed out so that can keep track in the recursion function
                 processed_labels.append(str(os.path.basename(
                     content_path).encode('ascii')))
-
                 upload_file(content_path)
 
-    # print("laaaaaaaaaaaaaaaaaaaaaaaaaaaaables return", processed_labels)
     return processed_labels
 
 

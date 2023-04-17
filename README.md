@@ -1,12 +1,22 @@
+to run this you need to have intall python-dotenv. If you don't have it, do:
+```sh
 python -m pip install python-dotenv
+```
 
+To run the script with provided example folder do:
+```sh
+python import.py ./pdfs
+```
+or
+```sh
+python import.py <path-folder-needed>
+```
 
-
-#Objective
+# Objective
 Create a script that would read a local folder and upload to Nuclia all the PDF files it
 contains, and then create a static web page allowing users to search into these files.
 
-##Guidelines and recommendations
+## Guidelines and recommendations
 - You can use the programming language you want. If you choose Python or JS/TS,
 using the existing Nuclia SDKs is not a requirement, you are free to use them if you
 want to, but making direct calls to the API is absolutely fine.
@@ -22,6 +32,8 @@ questions on the Nuclia Discord public channels.
 > Bonus 1:
 > Make sure the script does not make duplicates if we import the same files twice
 
+This features is included in the script
+
 > Bonus 2:
 > Make your knowledge box private and create an HTTP service that would proxy calls
 > to Nuclia and add automatically the needed HTTP headers so anonymous users can
@@ -35,11 +47,11 @@ Imagine that you want to restrict access to a set of resources in a Knowledge Bo
 You will store the authorized groups as a keywordset field in each resource at the time it is created. The resource creation payload will look like:
 ```sh
 {
-"title": "Meeting minutes",
-"texts": { "text": { "format": "PLAIN", "body": "some random text" } },
-"keywordsets": {
-"groups": { "keywords": [{ "value": "group1" }, { "value": "group2" }] }
-}
+  "title": "Meeting minutes",
+  "texts": { "text": { "format": "PLAIN", "body": "some random text" } },
+  "keywordsets": {
+    "groups": { "keywords": [{ "value": "group1" }, { "value": "group2" }] }
+  }
 }
 ```
 The groups key here is just an example. It can be anything you base your access restriction on: usernames, etc. Just use a relevant key to store the values.
